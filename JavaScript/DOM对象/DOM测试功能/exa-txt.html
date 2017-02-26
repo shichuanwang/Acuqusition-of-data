@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试DOM功能</title>
+</head>
+<body>
+    <div id="paratxt">
+        测试DOM对象中 querySelectorAll()功能
+        <img src="" alt="apple">
+
+    </div>
+    <script>
+        var images;
+        if(document.querySelectorAll) {
+            images = document.querySelectorAll("#paratxt > img")
+        }else {
+            images = document.getElementById("paratxt").getElementsByTagName("img")
+        }
+
+        for(var i=0; i < images.length; i++ ) {
+            images[i].style.border = "thick solid black";
+            images[i].style.padding = "4px";
+        }
+    </script>
+</body>
+</html>
